@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Tax Collector", 
+        "description": "First thingy you can buy",
+        "money": 1,
+        "available": true,
+        "owned": 0
+    },
+    {
+        "name": "Training Camp", 
+        "description": "First place you can buy",
+        "money": 10,
+        "available": true,
+        "owned": 0
+    },
+    {
+        "name": "Middle thingy", 
+        "description": "Second place you can buy",
+        "money": 25,
+        "available": true,
+        "owned": 0
+    },
+    {
+        "name": "Moon base", 
+        "description": "Last place you can buy",
+        "money": 10000,
+        "available" : true,
+        "owned": 0
+    }
+]

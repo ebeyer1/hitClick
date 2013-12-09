@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">
+			Money: {{currentMoney}}<br/><!--Set this guy to an ng-src-->
+			Search: <input ng-model="query">
+			<button ng-click="collectTax()">Collect Tax</button>
+			<!--Eventually. Set the query to be current money >= building.money-->
+			<!--Add a neat animation when an item gets dropped or added-->
+		</div>
+		<div class="span10">
+			<ul class="buildings">
+		  		<li ng-repeat="building in buildings | filter:query">
+		  			<p>Name: {{building.name}}</p>
+		  			<p>Desc: {{building.description}}</p>
+		  			<p>Cost: {{building.money}}</p>
+		  			<p>Available: {{building.available | clickable }}</p>
+		  			<p>Owned: {{building.owned}}</p>
+		  			<div><button ng-click="buyBuilding(building)">Buy</button></div>
+		  		</li>
+		  	</ul>
+		</div>
+	</div>
+</div>
