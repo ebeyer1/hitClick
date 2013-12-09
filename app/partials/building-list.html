@@ -2,11 +2,13 @@
 	<div class="row-fluid">
 		<div class="span3">
 			Money: {{currentMoney}}<br/><!--Set this guy to an ng-src-->
+			Mps: {{mps}}
 			Search: <input ng-model="query">
 			<button ng-click="collectTax()">Collect Tax</button>
 			<!--Eventually. Set the query to be current money >= building.money-->
 			<!--Add a neat animation when an item gets dropped or added-->
 		</div>
+		<button ng-click="doAThing()">Do A Thing</button>
 		<div class="span10">
 			<ul class="buildings">
 		  		<li ng-repeat="building in buildings | filter:query">
@@ -14,8 +16,9 @@
 		  			<p>Desc: {{building.description}}</p>
 		  			<p>Cost: {{building.money}}</p>
 		  			<p>Available: {{building.available | clickable }}</p>
-		  			<p>Owned: {{building.owned}}</p>
-		  			<div><button ng-click="buyBuilding(building)">Buy</button></div>
+		  			<p>Owned: {{building.owned}}</p>		  			
+		  			<div ng-if="currentMoney >= building.money"><button ng-click="buyBuilding(building)">Buy</button></div>
+		  			<div ng-if="!(currentMoney >= building.money)"><button disabled="">Need another {{building.money - currentMoney}}</button></div>
 		  		</li>
 		  	</ul>
 		</div>
